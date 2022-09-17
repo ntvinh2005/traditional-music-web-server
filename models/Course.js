@@ -10,12 +10,8 @@ const CourseSchema = new Schema({
         type: String, 
         required: true
     },
-    lessons: {
-        type: Array,
-        required: true
-    },
-    learners: {
-        type: Array, 
+    imgUrl: {
+        type: String, 
         required: true
     },
     createdAt: {

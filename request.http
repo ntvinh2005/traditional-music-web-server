@@ -7,7 +7,7 @@ POST http://localhost:5000/api/auth/register
 Content-Type: application/json
 
 {
-    "username": "La La",
+    "username": "VinhVinh",
     "password": "123456"
 }
 
@@ -16,7 +16,16 @@ POST http://localhost:5000/api/auth/login
 Content-Type: application/json
 
 {
-    "username": "La La",
+    "username": "VinhVinh",
+    "password": "123456"
+}
+
+###
+POST https://young-taiga-80393.herokuapp.com/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "VinhVinh",
     "password": "123456"
 }
 
@@ -76,17 +85,29 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmZlM
 ###
 POST http://localhost:5000/api/course HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmZlM2M2NjU4MWJlYzgxNTAwMmE3YWQiLCJpYXQiOjE2NjA4Mjk0MzZ9.53qKVQLaR312pWn3nUGwdSwtJRyM6MYnGn0fGwc7Aqo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjZmNjJmZTFkMzAzNGNhMTlmYzUwZDgiLCJpYXQiOjE2NjM0MjMxODh9.DsNgQBC3Yo0XB40DIhzXKuN5FMeVgkcGK9DgSLGcffk
 
 
 {
     "title": "Đàn nguyệt",
-    "description": "Nghe rất hay nha"
+    "description": "Nghe rất hay nha",
+    "imgUrl": "https://media.istockphoto.com/photos/koto-band-picture-id139696788?b=1&k=20&m=139696788&s=170667a&w=0&h=bfG6anYcReCQ8H6-f9JsWAHByXHW_-yKvvrfp4JDdE8="
 }
 
 ###
 GET http://localhost:5000/api/course/public/
 Content-Type: application/json
+
+###
+PUT http://localhost:5000/api/course/update/6325d5f658160ad398b174a7
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjZmNjJmZTFkMzAzNGNhMTlmYzUwZDgiLCJpYXQiOjE2NjM0MjMxODh9.DsNgQBC3Yo0XB40DIhzXKuN5FMeVgkcGK9DgSLGcffk
+
+{
+    "title": "Đàn Nguyệt",
+    "description": "Nghe cũng hay đấy"
+
+}
 
 ###
 PUT http://localhost:5000/api/post/62bfe60f26c253ea61a017a9 HTTP/1.1

@@ -48,7 +48,7 @@ router.get('/:id', verifyToken, async(req, res) => {
 // @access Private
 
 router.post('/', verifyToken,  async(req, res) =>{
-    const {title, description} = req.body
+    const {title, description, imgUrl} = req.body
     console.log(!title)
     console.log(String(title))
 
@@ -60,8 +60,7 @@ router.post('/', verifyToken,  async(req, res) =>{
         const newCourse = new Course({
             title, 
             description,
-            lessons: [],
-            learners: [],
+            imgUrl,
             user: req.userId
         })
         await newCourse.save()
@@ -69,7 +68,7 @@ router.post('/', verifyToken,  async(req, res) =>{
 
     } catch (error) {
         console.log(error)
-        res.status(500).json({success: false, message: 'Internal server error', course: newCourse})
+        res.status(500).json({success: false, message: 'Internal server error'})
     }
 })
 
@@ -77,7 +76,7 @@ router.post('/', verifyToken,  async(req, res) =>{
 // @desc Update post
 // @access Private
 router.put('/update/:id', verifyToken, async (req, res) => {
-	const { title, description, lessons, learners } = req.body
+	const { title, description } = req.body
 
 	// Simple validation
 	if (!title)
@@ -89,14 +88,14 @@ router.put('/update/:id', verifyToken, async (req, res) => {
         let updatedCourse = {
             title, 
             description,
-            lessons: lessons,
-            learners: learners,
             user: req.userId
         }
 
         const courseUpdateCondition = {_id: req.params.id, user: req.userId}
 
         updatedCourse = await Course.findOneAndUpdate(courseUpdateCondition, updatedCourse, {new: true})
+
+        console.log("Yeah!!!")
 
         // Not authorizeed to update post
 
@@ -105,7 +104,8 @@ router.put('/update/:id', verifyToken, async (req, res) => {
 
         res.json({success: true, message: 'Congratuation!', post: updatedPost})
     } catch (error) {
-        return res.status(500).json({success: false, message: 'Internal server error'})
+        console.log("No way")
+        return res.status(500).json({success: false, message: 'Internal server error', error})
     }
 }
 )
