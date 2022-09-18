@@ -10,6 +10,10 @@ const PostSchema = new Schema({
         type: String,
         required: true
     },
+    videoUrl: {
+        type: String,
+        required: true
+    },
     course: {
         type: Schema.Types.ObjectId,
         ref: 'courses'

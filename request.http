@@ -51,14 +51,15 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmZlM
 
 
 ###
-POST http://localhost:5000/api/post/62fe44067af661f88879b747 HTTP/1.1
+POST http://localhost:5000/api/post/6325fb980ee3afe80bee44c4 HTTP/1.1
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmZlM2M2NjU4MWJlYzgxNTAwMmE3YWQiLCJpYXQiOjE2NjA4Mjk0MzZ9.53qKVQLaR312pWn3nUGwdSwtJRyM6MYnGn0fGwc7Aqo
 
 
 {
     "title": "Hi Hi",
-    "content": "#Hi Hi H"
+    "content": "#Hi Hi H",
+    "videoUrl": "https://www.youtube.com/watch?v=kJQP7kiw5Fk"
 }
 
 ###

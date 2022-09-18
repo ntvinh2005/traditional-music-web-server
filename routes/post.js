@@ -38,7 +38,7 @@ router.get('/get/:id', async(req, res) => {
 // @access Private
 
 router.post('/:id', verifyToken,  async(req, res) =>{
-    const {title, content} = req.body
+    const {title, content, videoUrl} = req.body
     console.log(!title)
     console.log(String(title))
 
@@ -50,6 +50,7 @@ router.post('/:id', verifyToken,  async(req, res) =>{
         const newPost = new Post({
             title: title, 
             content: content,
+            videoUrl: videoUrl,
             course: req.params.id,
             user: req.userId
         })
