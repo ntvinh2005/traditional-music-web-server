@@ -59,7 +59,7 @@ router.post('/:id', verifyToken,  async(req, res) =>{
 
     } catch (error) {
         console.log(error)
-        res.status(500).json({success: false, message: 'Internal server error', post: newPost})
+        res.status(500).json({success: false, message: 'Internal server error'})
     }
 })
 
